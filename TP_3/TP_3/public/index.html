@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reading Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Tracker de Lecture de Livres</h1>
+    
+    <form id="book-form" class="mb-4">
+        <input id="title" type="text" placeholder="Titre" required class="border p-2 mb-2"/>
+        <input id="author" type="text" placeholder="Auteur" required class="border p-2 mb-2"/>
+        <input id="pages" type="number" placeholder="Nombre de pages" required class="border p-2 mb-2"/>
+        <input id="pagesRead" type="number" placeholder="Pages lues" required class="border p-2 mb-2"/>
+        <input id="price" type="number" placeholder="Prix" required class="border p-2 mb-2"/>
+        <select id="status" class="border p-2 mb-2">
+            <option value="Read">Read</option>
+            <option value="ReRead">Re-read</option>
+            <option value="DNF">DNF</option>
+            <option value="CurrentlyReading">Currently reading</option>
+            <option value="ReturnedUnread">Returned Unread</option>
+            <option value="WantToRead">Want to read</option>
+        </select>
+        <select id="format" class="border p-2 mb-2">
+            <option value="Print">Print</option>
+            <option value="PDF">PDF</option>
+            <option value="Ebook">Ebook</option>
+            <option value="AudioBook">AudioBook</option>
+        </select>
+        <button type="submit" class="bg-blue-500 text-white p-2">Ajouter le livre</button>
+    </form>
+
+    <h2 class="text-xl font-bold mb-2">Liste des livres</h2>
+    <table id="book-table" class="min-w-full border-collapse border border-gray-300">
+        <thead>
+            <tr>
+                <th class="border border-gray-300 p-2">Titre</th>
+                <th class="border border-gray-300 p-2">Auteur</th>
+                <th class="border border-gray-300 p-2">Pages</th>
+                <th class="border border-gray-300 p-2">Pages lues</th>
+                <th class="border border-gray-300 p-2">Statut</th>
+                <th class="border border-gray-300 p-2">Pourcentage lu</th>
+                <th class="border border-gray-300 p-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="book-list" class="border border-gray-300"></tbody>
+    </table>
+
+    <div id="global-stats" class="mt-4 text-lg font-semibold">Total des livres lus: 0, Total des pages lues: 0/0 pages</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
